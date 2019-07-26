@@ -3,14 +3,18 @@
     class="o-container o-container--m o-vertical-spacing o-vertical-spacing--xxl"
     :class="$style.main"
   >
-    <h1>
-      Distributed Vue.js Applications Part 2: Pushing Content and Component Updates to the Client
-    </h1>
+    <h1>Super big header!</h1>
+    <p>The core app contains a store. Value: {{ testItem }}</p>
+    <div id="login">
+      <button id="login-button" @click="logUserIn()">Log in</button>
+      <p>Logged in? {{ userLoggedIn }} </p>
+    </div>
     <NewsFeed/>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations } from 'vuex';
 import NewsFeed from './NewsFeed.vue';
 
 export default {
@@ -18,6 +22,16 @@ export default {
   components: {
     NewsFeed,
   },
+  methods: {
+    ...mapMutations(['logUserIn'])
+  },
+  computed: {
+    ...mapGetters(['testItem', 'userLoggedIn'])
+  },
+  // mounted: () => {
+  //   console.log(`Here's the store`);
+  //   console.log(this.$store);
+  // }
 };
 </script>
 

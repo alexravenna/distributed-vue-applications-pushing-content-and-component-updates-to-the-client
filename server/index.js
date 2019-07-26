@@ -4,8 +4,8 @@ const webSocket = require(`ws`);
 const http = require(`http`);
 
 const news = require(`./data/news.json`);
-const news1Update = require(`./data/news-1-update.json`);
-const news3add = require(`./data/news-3-add.json`);
+// const news1Update = require(`./data/news-1-update.json`);
+// const news3add = require(`./data/news-3-add.json`);
 
 const PORT = 8200;
 
@@ -32,18 +32,18 @@ const wss = new webSocket.Server({
   server,
 });
 
-const ADD = JSON.stringify({
-  type: `ADD`,
-  entity: news3add,
-});
-const UPDATE = JSON.stringify({
-  type: `UPDATE`,
-  entity: news1Update,
-});
+// const ADD = JSON.stringify({
+//   type: `ADD`,
+//   entity: news3add,
+// });
+// const UPDATE = JSON.stringify({
+//   type: `UPDATE`,
+//   entity: news1Update,
+// });
 
 wss.on(`connection`, (ws) => {
-  setInterval(() => ws.send(ADD), 5000);
-  setTimeout(() => setInterval(() => ws.send(UPDATE), 5000), 2500);
+  // setInterval(() => ws.send(ADD), 5000);
+  // setTimeout(() => setInterval(() => ws.send(UPDATE), 5000), 2500);
 });
 
 server.listen(PORT);
