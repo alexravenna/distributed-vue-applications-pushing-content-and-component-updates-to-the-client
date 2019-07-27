@@ -2,10 +2,10 @@
   {
     "component": {
       "name": "WithStore",
-      "url": "http://localhost:8200/WithStore/WithStore.41e3586b010c8c79c0d6.umd.min.js"
+      "url": "http://localhost:8200/WithStore/WithStore.9893fd8142efcee9d8bc.umd.min.js"
     },
     "data": {
-      "id": 3
+      "id": 2
     }
   },
   {
@@ -14,7 +14,7 @@
       "url": "http://localhost:8200/MyBiggerComponent/MyBiggerComponent.3c0bf689450276550211.umd.min.js"
     },
     "data": {
-      "id": 4
+      "id": 1
     }
   }
 ]

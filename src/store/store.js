@@ -12,9 +12,6 @@ export default new Vuex.Store({
     mutations: {
         logUserIn (state) {
             state.userLoggedIn = !state.userLoggedIn;
-            // console.log('Login was mutated');
-            // console.log(state);
-
         }
     },
     actions: {
@@ -22,12 +19,9 @@ export default new Vuex.Store({
     },
     getters: {
         testItem: (state) => {
-            // console.log('Getting testItem');
             return state.testItem;
         },
         userLoggedIn: (state) => {
-            // console.log('Getting userLoggedIn');
-            // console.log(state);
             return state.userLoggedIn;
         }
     }

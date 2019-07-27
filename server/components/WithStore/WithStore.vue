@@ -1,9 +1,9 @@
 <template>
     <div>
         <p>This component contains a store.</p>
-        <!-- <button @click="pressButton()">Press me</button> -->
-        <!-- <p>Pressed? {{ pressed }} </p> -->
-        <p>Logged in? {{ userLoggedIn }} </p>
+        <button @click="pressButton()">Press me</button>
+        <p>Pressed? {{ isPressed }} </p>
+        <p>Logged in? {{ isUserLoggedIn }} </p>
     </div>
 </template>
 
@@ -21,21 +21,22 @@
             }
         },
         computed: {
-            userLoggedIn () {
-                console.log('BP');
+            isUserLoggedIn () {
                 return this.$parent.$store.getters['userLoggedIn'];
             },
-            // pressed: () => {
-            //    return this.$parent.$store.getters['WithStore/pressed'];
-            // }
+            // ...mapGetters([
+            //     'isPressed'
+            // ])
+            pressed () {
+                console.log('BP');
+                // return this.$root.$store.getters['WithStore/isPressed'];
+                // return this.$store.getters['isPressed'];
+                return this.$store.getters.isPressed;
+            }
         },
         mounted() {
-            console.log('WithStore was mounted');
-            console.log('Testing root state...');
-            console.log(this.$parent.$store);
             console.log('Trying to register to global store');
             this.$parent.$store.registerModule('WithStore', store);
-            console.log('dummy for breakpoint');
         }
     };
 </script>

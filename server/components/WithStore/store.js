@@ -7,23 +7,22 @@ export default {
     // export default new Vuex.Store({
     strict: true,
     namespaced: true,
-    state: {
-        pressed: false,
+    state () {
+        return {
+            pressed: false,
+        }
     },
     mutations: {
         pressButton (state) {
             state.pressed = !state.pressed;
-            console.log('Button was mutated');
-            console.log(state);
         }
     },
     actions: {
 
     },
     getters: {
-        pressed: (state) => {
-            console.log('Getting button state');
-            console.log(state);
+        isPressed (state) {
+            console.log('pressed getter');
             return state.pressed;
         }
     }

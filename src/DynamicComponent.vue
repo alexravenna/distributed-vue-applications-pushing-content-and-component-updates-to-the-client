@@ -25,15 +25,6 @@ export default {
       computedComponent: null,
     };
   },
-  mounted() {
-    
-    
-    // console.log('Trying to add module store to global store');
-    // if ('store' in this.computedComponent){
-    //   this.$store.registerModule(this.computedComponent.name, this.computedComponent.store);
-    //   console.log(this.computedComponent.store);
-    // }
-  },
   watch: {
     component: {
       immediate: true,
