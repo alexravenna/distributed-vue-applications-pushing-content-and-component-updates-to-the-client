@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
-export default new Vuex.Store({
+export default {
+    // export default new Vuex.Store({
+    strict: true,
     namespaced: true,
     state: {
-        pressed: false
+        pressed: false,
     },
     mutations: {
         pressButton (state) {
@@ -25,4 +27,4 @@ export default new Vuex.Store({
             return state.pressed;
         }
     }
-});
+}

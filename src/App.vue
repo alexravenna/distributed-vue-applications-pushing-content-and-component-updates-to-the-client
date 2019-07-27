@@ -27,11 +27,7 @@ export default {
   },
   computed: {
     ...mapGetters(['testItem', 'userLoggedIn'])
-  },
-  // mounted: () => {
-  //   console.log(`Here's the store`);
-  //   console.log(this.$store);
-  // }
+  }
 };
 </script>
 
