@@ -8,36 +8,26 @@
 </template>
 
 <script>
-    import { mapGetters, mapMutations } from 'vuex';
     import store from './store.js';
 
     export default {
         name: 'WithStore',
-        store,
         methods: {
-            // ...mapMutations(['pressButton'])
             pressButton() {
-                this.$parent.$store.commit('WithStore/pressButton');
+                this.$store.commit('pressButton');
             }
         },
         computed: {
             isUserLoggedIn () {
-                return this.$parent.$store.getters['userLoggedIn'];
+                return this.$store.getters['userLoggedIn'];
             },
-            // ...mapGetters([
-            //     'isPressed'
-            // ])
             isPressed () {
-                console.log('BP');
-                // return this.$root.$store.getters['WithStore/isPressed'];
-                // return this.$store.getters['isPressed'];
-                return this.$parent.$store.getters['WithStore/isPressed'];
+                return this.$store.getters['isPressed'];
             }
         },
-        mounted() {
-            console.log('Trying to register to global store');
-            this.$parent.$store.registerModule('WithStore', store);
-        }
+        beforeCreate() {
+            this.$store.registerModule('WithStore', store);
+        },
     };
 </script>
 

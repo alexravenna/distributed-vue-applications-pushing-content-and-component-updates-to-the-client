@@ -1,7 +1,7 @@
 <template>
   <Component
     :is="computedComponent"
-    v-bind="props"
+    v-bind="componentProps"
   />
 </template>
 
@@ -15,7 +15,7 @@ export default {
       required: true,
       type: Object,
     },
-    props: {
+    componentProps: {
       default: () => ({}),
       type: Object,
     },
@@ -31,7 +31,13 @@ export default {
       handler(newComponent, prevComponent = ``) {
         if (newComponent.url === prevComponent.url) return;
 
-        this.computedComponent = () => externalComponent(this.component.url);
+        const self = this;
+        externalComponent(this.component.url).then((component) => {
+          self.computedComponent = {
+            ...component,
+            store: self.$store,
+          };
+        });
       },
     },
   },
