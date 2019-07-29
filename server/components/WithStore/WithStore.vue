@@ -27,11 +27,11 @@
             // ...mapGetters([
             //     'isPressed'
             // ])
-            pressed () {
+            isPressed () {
                 console.log('BP');
                 // return this.$root.$store.getters['WithStore/isPressed'];
                 // return this.$store.getters['isPressed'];
-                return this.$store.getters.isPressed;
+                return this.$parent.$store.getters['WithStore/isPressed'];
             }
         },
         mounted() {
