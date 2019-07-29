@@ -3,7 +3,7 @@ const path = require(`path`);
 const webSocket = require(`ws`);
 const http = require(`http`);
 
-const news = require(`./data/news.json`);
+const mainContext = require(`./data/mainContext.json`);
 // const news1Update = require(`./data/news-1-update.json`);
 // const news3add = require(`./data/news-3-add.json`);
 
@@ -21,8 +21,8 @@ app.use(express.static(path.resolve(__dirname, `components`), {
   maxAge: `365d`,
 }));
 
-app.get(`/news`, (req, res) => {
-  res.send(news);
+app.get(`/main-context`, (req, res) => {
+  res.send(mainContext);
 });
 
 const server = http.createServer(app);

@@ -9,18 +9,18 @@
       <button id="login-button" @click="logUserIn()">Log in</button>
       <p>Logged in? {{ userLoggedIn }} </p>
     </div>
-    <NewsFeed/>
+    <main-context/>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
-import NewsFeed from './NewsFeed.vue';
+import MainContext from '@/contexts/MainContext.vue';
 
 export default {
   name: `App`,
   components: {
-    NewsFeed,
+    MainContext,
   },
   methods: {
     ...mapMutations(['logUserIn'])

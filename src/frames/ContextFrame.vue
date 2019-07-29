@@ -4,7 +4,7 @@ import axios from 'axios';
 import ws from '../utils/ws';
 
 export default {
-  name: `FrameLiveFeed`,
+  name: `ContextFrame`,
   props: {
     endpoint: {
       required: true,
