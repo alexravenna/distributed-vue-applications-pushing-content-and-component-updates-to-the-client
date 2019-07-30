@@ -1,0 +1,41 @@
+{
+  "name": "distributed-vue-applications-pushing-content-and-component-updates-to-the-client",
+  "version": "0.1.0",
+  "author": "Markus Oberlehner",
+  "homepage": "https://github.com/maoberlehner/distributed-vue-applications-pushing-content-and-component-updates-to-the-client",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "build:with-store": "vue-cli-service build --target lib --formats umd-min --dest components/WithStore --name 'WithStore.[chunkhash]' dev/WithStore/WithStore.vue",
+    "build:footer-button": "vue-cli-service build --target lib --formats umd-min --dest components/FooterButton --name 'FooterButton.[chunkhash]' dev/FooterButton/FooterButton.vue",
+    "build:footer-text": "vue-cli-service build --target lib --formats umd-min --dest components/FooterText --name 'FooterText.[chunkhash]' dev/FooterText/FooterText.vue",
+    "build:composite": "vue-cli-service build --target lib --formats umd-min --dest components/MyBiggerComponent --name 'MyBiggerComponent.[chunkhash]' dev/MyBiggerComponent/MyBiggerComponent.vue"
+  },
+  "dependencies": {
+    "@avalanche/generic-box-sizing-reset": "^4.0.0-alpha.5",
+    "@avalanche/object-container": "^4.0.0-alpha.8",
+    "@avalanche/object-vertical-spacing": "^4.0.0-alpha.5",
+    "@avalanche/setting-spacings": "^4.0.0-alpha.6",
+    "@vue/cli-plugin-babel": "^3.5.5",
+    "@vue/cli-service": "^3.5.3",
+    "axios": "^0.18.0",
+    "node-sass": "^4.11.0",
+    "node-sass-magic-importer": "^5.3.1",
+    "reset-css": "^4.0.1",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10",
+    "vuex": "^3.1.1",
+    "ws": "^6.2.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "^3.9.2",
+    "@vue/eslint-config-airbnb": "^4.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-vue": "^5.2.3"
+  }
+}
